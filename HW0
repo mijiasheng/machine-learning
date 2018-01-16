@@ -1,0 +1,22 @@
+from collections import OrderedDict
+
+with open('words.txt','r') as f:
+    instr=f.read()
+
+    #print (instr.split());
+    #split翻译为分裂。  split()就是将一个字符串分裂成多个字符串组成的列表。
+    #split()当不带参数时以空格进行分割，当代参数时，以该参数进行分割
+    
+    instr=instr.split()
+    od=OrderedDict()
+    for i in instr:
+        if i in od:
+            od[i]+=1
+        else:
+            od[i]=1
+    cnt=0
+    
+                
+for k,v in od.items():
+    print (k,cnt,v)
+    cnt+=1
