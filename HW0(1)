@@ -1,0 +1,20 @@
+with open('words.txt','r') as f:
+    instr=f.read()
+    instr=instr.split()
+    d=dict()    #建一个dictionary
+    I=list()    #list() 方法用于将元组转换为列表。
+                #注：元组与列表是非常类似的，区别在于元组的元素值不能修改，元组是放在括号中，列表是放于方括号中。
+    for i in instr:
+        if i not in I:
+            I.append(i)  #append() 方法用于在列表末尾添加新的对象。 
+        if i in d:
+            d[i]+=1
+        else:
+            d[i]=1
+    cnt=0
+
+    for item in I:
+        print(item,cnt,d[item])
+        cnt+=1
+        
+    
